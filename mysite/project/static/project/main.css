@@ -1,0 +1,13 @@
+.brand-logo{
+color: #60abc4;
+}
+
+
+body {
+    height: 100%;
+    margin: 0;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    background-color:#eff5f7;
+}
