@@ -1,6 +1,7 @@
 import datetime
 from source import Source
 
+# Fact data structure
 class Fact(object):
   def __init__(self, 
                 published_date=datetime.date(year=1970,month=1,day=1),
@@ -15,4 +16,11 @@ class Fact(object):
     self.factStrings = factStrings
     self.factHash = factHash
     self.confidence = confidence
-    
+
+
+# Function for generating facts from article.
+# @OUTPUT - list of facts
+def extractFacts(article):
+  facts = list()
+
+  return facts
