@@ -34,11 +34,17 @@ _confidenceScore:_ - Numeric representation of how often this fact has been pres
 Rss Feed Links:
 
 BBC
+
 Top Stories: http://feeds.bbci.co.uk/news/rss.xml
+
 Politics: http://feeds.bbci.co.uk/news/politics/rss.xml
 
+
 NYT
+
 Home Page: http://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml
+
 US: http://rss.nytimes.com/services/xml/rss/nyt/US.xml
+
 Politics: http://rss.nytimes.com/services/xml/rss/nyt/Politics.xml
 
