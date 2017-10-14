@@ -33,7 +33,14 @@ body {
     background-color:#eff5f7;
 
 }
+<<<<<<< HEAD
 
+=======
+textarea.materialize-textarea{
+    height: 220px;
+    resize: none;
+}
+>>>>>>> ae4b72b8d75b251a131540adfb8176b286310f48
 /*.materialize-textarea{
   padding-left: 10px;
 }*/

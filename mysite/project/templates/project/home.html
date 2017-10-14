@@ -2,22 +2,33 @@
 
 {% block content %}
   <div class="row">
-    <form class="col s12">
+    <form class="col s12" action="/reddit">
       <div class="row">
+<<<<<<< HEAD
         <img class="col s1" src="static/project/icons/snoo.png">
          <div class="input-field col s11">
            <input id="link" type="text">
            <label for="link">Paste your Reddit link here:</label>
+=======
+         <div class="input-field col s12">
+           <input id="link" name="link" type="text" >
+           <label>Reddit Link</label>
+>>>>>>> ae4b72b8d75b251a131540adfb8176b286310f48
          </div>
        </div>
     </form>
   </div>
   <div class="row">
-    <form class="col s12">
+    <form class="col s12" action="/article">
       <div class="row ">
+<<<<<<< HEAD
         <img class="col s1" src="static/project/paper.png">
         <div class="input-field col s11">
           <textarea id="textarea1" class="materialize-textarea"></textarea>
+=======
+        <div class="input-field col s12">
+          <textarea id="textarea1" rows="10" class="materialize-textarea"></textarea>
+>>>>>>> ae4b72b8d75b251a131540adfb8176b286310f48
           <label for="textarea1">Paste your article here:</label>
         </div>
       </div>
