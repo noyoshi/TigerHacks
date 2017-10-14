@@ -3,7 +3,7 @@
 from datetime import datetime 
 
 class article(object):
-    def __init__(self, title, description, date, body="", link):
+    def __init__(self, title, description, date, link,body=""):
         self.title = title
         self.description = description
         self.date = date 
