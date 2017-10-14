@@ -13,25 +13,25 @@ def article(request):
     print "Running tests"
     title = request.GET.get('title')
     if title == None:
-      title = ""
+        title = ""
 
     description = request.GET.get('description')
     if description == None:
-      description = ""
+        description = ""
 
     dateStr = request.GET.get('date')
     if  dateStr == None:
-      date = datetime.date(1970,1,1)
+        date = datetime.date(1970,1,1)
     else:
-      date = datetime.date(1970,1,1)
+        date = datetime.date(1970,1,1)
 
     body = request.GET.get('body')
     if body == None:
-      body = ""
+        body = ""
 
     link = request.GET.get('link')
     if link == None:
-      link = ""
+       link = ""
 
 
     print(title)
@@ -41,3 +41,13 @@ def article(request):
     print(link)
 
     return render(request, 'project/article.html')
+
+def reddit(request):
+    link = request.GET.get('link')
+    if link == None:
+      link = ""
+    
+    print(link)
+
+    return render(request, 'project/reddit.html')
+
