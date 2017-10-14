@@ -1,4 +1,5 @@
 import datetime
+from source import Source
 
 class Fact(object):
   def __init__(self, 
@@ -11,7 +12,7 @@ class Fact(object):
     self.published_date = published_date
     self.sources = sources
     self.distilledFact = distilledFact
-    self.factString = factString
+    self.factStrings = factStrings
     self.factHash = factHash
     self.confidence = confidence
     
