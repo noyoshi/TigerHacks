@@ -16,6 +16,8 @@ def are_comparable(factA, factB):
 def compare_distilled(factA, factB):
   if are_comparable(factA, factB):
     return factA.distilledFact == factB.distilledFact
+  else:
+    return False
 
 #COMPARE CONFIDENCE
 # returns the fact with the higher confidence
@@ -30,3 +32,5 @@ def compare_confidence(factA, factB):
 def compare_facts(factA, factB):
   if compare_distilled(factA, factB):
     return compare_confidence(factA, factB)
+  else:
+    return False
