@@ -8,7 +8,11 @@
 # returns True if facts are related and can be compared
 # returns False otherwise
 def are_comparable(factA, factB):
-  if factA.factHash == factB.factHash:
-    return True
-  else:
-    return False
+  return factA.factHash == factB.factHash
+
+#COMPARE FACTS
+# returns True if the distilledFact strings match
+# returns False otherwise
+def compare_facts(factA, factB):
+  if are_comparable(factA, factB):
+    return factA.distilledFact == factB.distilledFact
