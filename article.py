@@ -2,6 +2,8 @@
 
 from datetime import datetime 
 
+# Article object 
+
 class article(object):
     def __init__(self, title, description, date, link,body=""):
         self.title = title

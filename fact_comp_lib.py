@@ -34,3 +34,8 @@ def compare_facts(factA, factB):
     return compare_confidence(factA, factB)
   else:
     return False
+
+#HASH CHECK
+#
+def hash_check():
+  pass
