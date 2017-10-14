@@ -7,5 +7,7 @@ from source import Source
 # @OUTPUT - list of facts
 def extractFacts(article):
   facts = list()
-
+  sentences = article.body.split(".")
+  print sentences
+  print len(sentences)
   return facts
