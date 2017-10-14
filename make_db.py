@@ -7,8 +7,7 @@ import json
 
 def make_db(url):
 
-  articles = []
-#  articles = bbc_scraper(url)
+  articles = bbc_scraper(url)
 
   facts_dict = {}
   
