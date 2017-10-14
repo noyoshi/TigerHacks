@@ -12,7 +12,7 @@ with open('facts_db_t.json', 'w') as t:
   t.write(json.dumps(r_hash))
 
 print "loading database..."
-facts_db = filter_f.load_db('facts_db_t.json')
+facts_db = filter_f.load_db('facts_db.json')
 
 print "filtering facts..."
 filter_f.filter_facts(random, facts_db)
