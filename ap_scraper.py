@@ -6,6 +6,7 @@ import feedparser
 from datetime import datetime
 import urllib
 from bs4 import BeautifulSoup as soup 
+from article import article
 def ap_scraper():
     my_url = "http://feeds.bbci.co.uk/news/rss.xml" # URL of rss feed / whatever you need
 
@@ -26,8 +27,14 @@ def ap_scraper():
     return [titles, descriptions, dates]
 
 l = ap_scraper()
+article_list = []
 for i in range(len(l[0])):
-    print l[0][i]
-    print l[1][i]
-    print l[2][i]
-    print 
+    temp = article(l[0][i],l[1][i],l[2][i])
+    article_list.append(temp)
+    # print l[0][i]
+    # print l[1][i]
+    # print l[2][i]
+    # print 
+# for thing in article_list:
+#     print thing 
+#     print 
