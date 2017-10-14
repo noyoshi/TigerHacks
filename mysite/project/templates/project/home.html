@@ -1,14 +1,13 @@
 {% extends "project/header.html" %}
 
 {% block content %}
-
-
   <div class="row">
     <form class="col s12">
       <div class="row">
-         <div class="input-field col s12">
-           <input id="email" type="email" class="validate">
-           <label for="email">Reddit Link</label>
+        <img class="col s1" src="static/project/icons/snoo.png">
+         <div class="input-field col s11">
+           <input id="link" type="text">
+           <label for="link">Paste your Reddit link here:</label>
          </div>
        </div>
     </form>
@@ -16,11 +15,19 @@
   <div class="row">
     <form class="col s12">
       <div class="row ">
-        <div class="input-field col s12">
+        <img class="col s1" src="static/project/paper.png">
+        <div class="input-field col s11">
           <textarea id="textarea1" class="materialize-textarea"></textarea>
           <label for="textarea1">Paste your article here:</label>
         </div>
       </div>
     </form>
   </div>
+<ul>
+  {% for n in claimsList %}
+
+  <li> Claims: {{n}} <img class="newspaper" src="static/project/icons/newspaper.png"></li>
+  {% endfor %}
+</ul>
+
 {% endblock %}
