@@ -42,9 +42,9 @@ def bbc_scraper(my_url):
         if len(body) > 0:
             temp = article(title,description,date,link,body)
             article_list.append(temp)
-
+            print "appending article..."
     
     return article_list
 
 # Testing purposes only
-# bbc_scraper("http://feeds.bbci.co.uk/news/rss.xml")
+#bbc_scraper("http://feeds.bbci.co.uk/news/rss.xml")
