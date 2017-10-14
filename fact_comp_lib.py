@@ -10,9 +10,23 @@
 def are_comparable(factA, factB):
   return factA.factHash == factB.factHash
 
-#COMPARE FACTS
+#COMPARE DISTILLED
 # returns True if the distilledFact strings match
 # returns False otherwise
-def compare_facts(factA, factB):
+def compare_distilled(factA, factB):
   if are_comparable(factA, factB):
     return factA.distilledFact == factB.distilledFact
+
+#COMPARE CONFIDENCE
+# returns the fact with the higher confidence
+def compare_confidence(factA, factB):
+  if factA.confidence > factB.confidence:
+    return factA
+  else:
+    return factB
+
+#COMPARE FACTS
+# return fact that has the higher confidence
+def compare_facts(factA, factB):
+  if compare_distilled(factA, factB):
+    return compare_confidence(factA, factB)
