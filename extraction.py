@@ -2,6 +2,7 @@
 import requests
 import json
 import string
+import md5
 import spacy
 from spacy.en import English
 
@@ -28,7 +29,7 @@ def buildClause(baseToken):
 def distillFact(factString):
   sentenceRoot = None
  
-  parser = English() 
+  parser = English()
   for token in parser(factString.strip().decode('utf-8')):
     #print token.orth_, token.dep_, token.head.orth_, [t.orth_ for t in token.lefts], [t.orth_ for t in token.rights]
     if token.dep_ == "ROOT":
@@ -49,6 +50,16 @@ def distillFact(factString):
       bestString = testFact
 
     return bestString
+
+# Creates a hash representation of a string distilling Nouns/sentiments.
+def hashFact(factString):
+  parser = English()
+  hashString = ""
+  for token in parser(factString.strip().decode('utf-8')):
+    # print token.orth_, token.dep_, token.head.orth_, [t.orth_ for t in token.lefts], [t.orth_ for t in token.rights]
+    if token.dep_ == u'nsubj'  or token.dep_ == u'nobj' or token.dep_ == u'pobj':
+      hashString = token.orth_ + " "
+  return md5.md5(hashString)
 
 # Generates a score to determine how open to fact-checking a statement is.
 def checkability(factString):
@@ -73,5 +84,6 @@ def extractFacts(article):
       facts.append(Fact(published_date=article.date,
                         distilledFact=str(distillFact(s)),
                         factStrings=[s],
+                        factHash = hashFact(s),
                         confidence = c))
   return facts
