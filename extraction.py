@@ -2,7 +2,6 @@
 import requests
 import json
 import string
-import md5
 import spacy
 from spacy.en import English
 
@@ -12,6 +11,8 @@ from source import Source
 
 FACT_CHECK_URL="http://idir-server2.uta.edu/claimbuster/API/score/text/"
 CHECK_THRESHOLD=0.00
+
+parser = English() #instantiate one parser to reduce init times
 
 def buildClause(baseToken):
   output = baseToken.orth_
@@ -29,8 +30,14 @@ def buildClause(baseToken):
 def distillFact(factString):
   sentenceRoot = None
  
-  parser = English()
-  for token in parser(factString.strip().decode('utf-8')):
+  # Convert char by char to ignore individual non-ascii chars.
+  newFactString = ""
+  for c in factString.strip():
+    try:
+      newFactString = newFactString + c.decode('utf-8')
+    except:
+      continue
+  for token in parser(newFactString):
     #print token.orth_, token.dep_, token.head.orth_, [t.orth_ for t in token.lefts], [t.orth_ for t in token.rights]
     if token.dep_ == "ROOT":
       sentenceRoot = token
@@ -53,13 +60,19 @@ def distillFact(factString):
 
 # Creates a hash representation of a string distilling Nouns/sentiments.
 def hashFact(factString):
-  parser = English()
-  hashString = ""
-  for token in parser(factString.strip().decode('utf-8')):
+  hashSet = set()
+  newFactString = ""
+  for c in factString.strip():
+    try:
+      newFactString = newFactString + c.decode('utf-8')
+    except:
+      continue
+  for token in parser(newFactString):
     # print token.orth_, token.dep_, token.head.orth_, [t.orth_ for t in token.lefts], [t.orth_ for t in token.rights]
     if token.dep_ == u'nsubj'  or token.dep_ == u'nobj' or token.dep_ == u'pobj':
-      hashString = token.orth_ + " "
-  return md5.md5(hashString)
+      hashSet.add(token.orth_)
+  print hashSet
+  return hash(" ".join(hashSet))
 
 # Generates a score to determine how open to fact-checking a statement is.
 def checkability(factString):
@@ -74,8 +87,6 @@ def checkability(factString):
 # Function for generating facts from article.
 # @OUTPUT - list of facts
 def extractFacts(article):
-  parser = English()
-
   facts = list()
   sentences = article.body.split('.')
   for s in sentences:
