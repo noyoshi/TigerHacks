@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-import make_db, filter_f, extraction
+import make_db, filter_f, extraction, nyt_scraper
 
 url = "http://feeds.bbci.co.uk/news/rss.xml"
 
@@ -12,8 +12,7 @@ print "Loading Database..."
 facts_db = filter_f.load_db('facts_db.json')
 #get articles
 print "Scraping..."
-articles = []
-  #run a scraper to get new facts
+articles = nyt_scraper.nyt_scraper("http://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml")
 #extract facts
 for article in articles:
   print "extracting facts..."

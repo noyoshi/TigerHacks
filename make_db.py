@@ -22,6 +22,7 @@ def make_db(url):
   
   for article in articles:
     facts = extractFacts(article)
+    print "extracting..."
     for fact in facts:
       fact_json = make_json(fact)
       facts_dict[fact.factHash] = fact_json
