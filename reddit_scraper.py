@@ -7,7 +7,6 @@ from datetime import datetime
 import urllib
 from bs4 import BeautifulSoup as soup 
 from comment import comment
-from comment import post 
 import re 
 
 
