@@ -39,9 +39,9 @@ def bbc_scraper(my_url):
             paragraphs = bod.findAll("p")
             for pars in paragraphs:
                 body = body + pars.text
-        
-        temp = article(title,description,date,link,body)
-        article_list.append(temp)
+        if len(body) > 0:
+            temp = article(title,description,date,link,body)
+            article_list.append(temp)
 
     
     return article_list
