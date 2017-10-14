@@ -8,19 +8,39 @@
       <div class="row">
          <div class="input-field col s12">
            <input id="link" name="link" type="text" >
-           <label>Reddit Link</label>
+           <label id="redditLabel">Reddit Link</label>
          </div>
        </div>
     </form>
   </div>
   <div class="row">
-    <form class="col s12" action="/article">
+    <form id= "articleForm" class="col s12" action="/article">
       <div class="row ">
         <div class="input-field col s12">
-          <textarea id="textarea1" rows="10" class="materialize-textarea"></textarea>
-          <label for="textarea1">Paste your article here:</label>
+          <textarea id="textarea1" type="submit" class="materialize-textarea"></textarea>
+          <label id="articleLabel" for="textarea1">Paste your article here:</label>
         </div>
       </div>
     </form>
   </div>
+
+  <script>
+    redditText = document.getElementById("link");
+    articleText = document.getElementById("textarea1");
+    redditLabel = document.getElementById("redditLabel");
+    articleLabel = document.getElementById("articleLabel");
+    articleForm = document.getElementById("articleForm");
+
+    articleText.addEventListener("oninput", function(event){
+      articleLabel.style.visibility="hidden";
+    });
+
+    articleText.addEventListener("keypress", function(event){
+      if(event.keyCode == 13){
+        articleForm.submit()
+      }
+    });
+
+    
+  </script>
 {% endblock %}

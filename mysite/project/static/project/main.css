@@ -18,10 +18,6 @@ body {
     width: 100%;
     background-color:#eff5f7;
 }
-textarea.materialize-textarea{
-    height: 220px;
-    resize: none;
-}
 /*.materialize-textarea{
   padding-left: 10px;
 }*/
