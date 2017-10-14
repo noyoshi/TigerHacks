@@ -9,6 +9,7 @@ def load_db(file_name):
   with open(file_name, 'r') as f:
     read_str = f.read()
     facts_db = json.loads(read_str)
+  return facts_db
 
 def filter_facts(fact, fact_db):
   report = {}

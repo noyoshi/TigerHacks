@@ -17,7 +17,7 @@ def make_json(fact):
 def make_db(url):
 
   articles = []
-#  articles = bbc_scraper(url)
+  articles = bbc_scraper(url)
 
   facts_dict = {}
   

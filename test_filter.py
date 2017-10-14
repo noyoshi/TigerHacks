@@ -13,5 +13,6 @@ with open('facts_db_t.json', 'w') as t:
 
 print "loading database..."
 facts_db = filter_f.load_db('facts_db_t.json')
+
 print "filtering facts..."
 filter_f.filter_facts(random, facts_db)
