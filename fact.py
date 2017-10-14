@@ -1,6 +1,4 @@
 import datetime
-from article import article
-from source import Source
 
 # Fact data structure
 class Fact(object):
@@ -17,11 +15,3 @@ class Fact(object):
     self.factStrings = factStrings
     self.factHash = factHash
     self.confidence = confidence
-
-
-# Function for generating facts from article.
-# @OUTPUT - list of facts
-def extractFacts(article):
-  facts = list()
-
-  return facts
