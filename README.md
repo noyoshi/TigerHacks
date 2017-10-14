@@ -2,6 +2,10 @@
 
 Doug Smith, Noah Yoshida, Cami Carballo
 
+### Dependencies
+- All data in REQUIREMENTS.txt `pip install -r REQUIREMENTS.txt`
+- spacy english module: `python -m spacy download en`
+
 ### Common Data Type
 
 fact JSON structure:
