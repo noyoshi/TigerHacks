@@ -16,3 +16,6 @@ class article(object):
         return self.date 
     def get_body(self):
         return self.body
+    def __str__(self): # Please don't use this lol, just use the get functions and then print those 
+        return self.get_title()+ " " + self.get_description()+ " " + self.get_body() + " " + self.get_date()
+        
