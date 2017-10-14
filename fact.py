@@ -1,5 +1,5 @@
 import datetime
-from ../article import article
+from article import article
 from source import Source
 
 # Fact data structure
