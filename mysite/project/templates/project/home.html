@@ -1,14 +1,13 @@
 {% extends "project/header.html" %}
 
 {% block content %}
-
-
   <div class="row">
     <form class="col s12" action="/reddit">
       <div class="row">
-         <div class="input-field col s12">
-           <input id="link" name="link" type="text" >
-           <label id="redditLabel">Reddit Link</label>
+        <img class="col s1" src="static/project/icons/snoo.png">
+         <div class="input-field col s11">
+           <input id="link" type="text">
+           <label id="redditLabel" for="link">Paste your Reddit link here:</label>
          </div>
        </div>
     </form>
@@ -16,13 +15,20 @@
   <div class="row">
     <form id= "articleForm" class="col s12" action="/article">
       <div class="row ">
-        <div class="input-field col s12">
-          <textarea id="textarea1" type="submit" class="materialize-textarea"></textarea>
+        <img class="col s1" src="static/project/paper.png">
+        <div class="input-field col s11">
+          <textarea id="textarea1" class="materialize-textarea"></textarea>
           <label id="articleLabel" for="textarea1">Paste your article here:</label>
         </div>
       </div>
     </form>
   </div>
+
+<ul>
+  {% for n in claimsList %}
+  <li> Claims: {{n}} <img class="newspaper" src="static/project/icons/newspaper.png"></li>
+  {% endfor %}
+</ul>
 
   <script>
     redditText = document.getElementById("link");
