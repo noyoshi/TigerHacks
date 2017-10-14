@@ -10,6 +10,7 @@ from article import article
 def ap_scraper(my_url):
     '''
     returns a list of article objects from the scraped AP news URL
+    you can chose different URLs for Associated Press RSS to serve up 
     '''
 
     # my_url = "http://feeds.bbci.co.uk/news/rss.xml" # URL of rss feed / whatever you need
