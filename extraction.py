@@ -71,7 +71,7 @@ def hashFact(factString):
     # print token.orth_, token.dep_, token.head.orth_, [t.orth_ for t in token.lefts], [t.orth_ for t in token.rights]
     if token.dep_ == u'nsubj'  or token.dep_ == u'nobj' or token.dep_ == u'pobj':
       hashSet.add(token.orth_)
-  if len(hashSet > 0):
+  if len(hashSet) > 0:
     return hash(" ".join(hashSet))
 
   return hash(newFactString)
