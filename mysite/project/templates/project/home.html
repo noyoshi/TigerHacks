@@ -37,14 +37,28 @@
     articleLabel = document.getElementById("articleLabel");
     articleForm = document.getElementById("articleForm");
 
-    articleText.addEventListener("oninput", function(event){
+    articleText.addEventListener("focus", function(){
       articleLabel.style.visibility="hidden";
+    });
+
+    articleText.addEventListener("blur", function(){
+      articleText.value = "";
+      articleLabel.style.visibility="visible";
     });
 
     articleText.addEventListener("keypress", function(event){
       if(event.keyCode == 13){
         articleForm.submit()
       }
+    });
+    
+    redditText.addEventListener("focus", function(){
+      redditLabel.style.visibility="hidden";
+    });
+
+    redditText.addEventListener("blur", function(){
+      redditText.value = "";
+      redditLabel.style.visibility="visible";
     });
 
     
