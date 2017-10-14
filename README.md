@@ -1,10 +1,10 @@
-#TigerHacks 2017
+# **TigerHacks 2017**
 
 Doug Smith, Noah Yoshida, Cami Carballo
 
-###Common Data Type
+### Common Data Type
 
-fact JSON structue:
+fact JSON structure:
 ```
 {
   date: Date
@@ -28,5 +28,5 @@ _factStrings:_ - Actual quotes of all strings that reduce to this fact
 
 _factHash:_ - Hashed representation of what the fact concerns (Subjects x Sentiment)
 
-_confidenceScore_ - Numeric representation of how often this fact has been presented/verified
+_confidenceScore:_ - Numeric representation of how often this fact has been presented/verified
 
