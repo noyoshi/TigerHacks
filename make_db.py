@@ -16,13 +16,19 @@ def make_json(fact):
 
   return fact_json
 
-def make_db(url):
+def make_db(bbc_url, nyt_url):
 
-  articles = bbc_scraper(url)
-
+  articles_bbc = bbc_scraper(bbc_url)
+  articles_nyt = nyt_scraper(nyt_url)
   facts_dict = {}
   
-  for article in articles:
+  for article in articles_bbc:
+    facts = extractFacts(article)
+    for fact in facts:
+      fact_json = make_json(fact)
+      facts_dict[fact.factHash] = fact_json
+
+  for article in articles_nyt:
     facts = extractFacts(article)
     for fact in facts:
       fact_json = make_json(fact)
