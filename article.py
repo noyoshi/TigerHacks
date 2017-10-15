@@ -5,7 +5,7 @@ from datetime import datetime
 # Article object 
 
 class article(object):
-    def __init__(self, title, description, date, link,body=""):
+    def __init__(self, title="", description="", date=None, link="",body=""):
         self.title = title
         self.description = description
         self.date = date 

@@ -1,0 +1,37 @@
+{% extends "project/header.html" %}
+
+{% block content %}
+<div>
+  <div class="row containter">
+    <h3 class="header">Welcome</h3>
+    <div class="divider"></div>
+  <p class="grey-text text-darken-3 lighten-3">
+    This application serves to check and verify claims made in either news articles or reddit comments.
+    If you would like to verify an article, please click the newspaper button and paste in the article text
+    when prompted. If you would like to verify a reddit post, just paste in the link. We will handle
+    the rest!
+  </p>
+</div>
+  <div class="row">
+    <div class="row">
+      <br>
+
+         <img id="redditIcon" class="snoo hoverable col s2 push-s7" src="static/project/icons/new_snoo1.png">
+         <img id="articleIcon" class="paper hoverable col s2 push-s1" src="static/project/paper.png">
+       </div>
+   </div>
+         <!-- <a class="hoverable col s1 waves-effect waves-light btn-large">Submit</a> -->
+  </div>
+
+<ul>
+  {% for n in claimsList %}
+  <li> Claims: {{n}} <img class="newspaper" src="static/project/icons/newspaper.png"></li>
+  {% endfor %}
+</ul><script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <script src="static/project/javascript/home.js"></script>
+  <script>$(document).ready(function(){
+       $('.parallax').parallax();
+     });
+</script>
+{% endblock %}

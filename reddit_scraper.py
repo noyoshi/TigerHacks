@@ -38,7 +38,7 @@ def reddit_scraper(my_url):
                 author = ""
                 if ''.join(d[0])[0].strip().isdigit(): #is children a digit?
 
-                    kids = int(''.join(d[0]).split()[0]) # NOT USING THIS ANYMORE, MAYBE IN THE FUTURE
+                    # kids = int(''.join(d[0]).split()[0]) # NOT USING THIS ANYMORE, MAYBE IN THE FUTURE
                     # We are not implementing a heirarchy, instead we are just saying that all comments 
                     # are on the same level. 
                 else: # else, we know that this is the end of the page(beginning I should say) 
