@@ -11,7 +11,12 @@
     color: black;
     font-family:'Julius Sans One', sans-serif;
 }
-
+.snoo{
+  opacity: 1;
+}
+.paper{
+  opacity: 1;
+}
 .btn-large:visited{
   background-color: white
 }
