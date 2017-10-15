@@ -1,46 +1,41 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.shortcuts import render
+import os
+from django.conf import settings
+
+from django.shortcuts import render, render_to_response
 from django.http import HttpResponseRedirect
 
-import datetime
+import json
+import article as a
+import filter_f
+import extraction
+import nyt_scraper
+import bbc_scraper
+
+DB_URL = "http://feeds.bbci.co.uk/news/rss.xml"
+CK_URL = "http://feeds.bbci"
+facts_db = filter_f.load_db(os.path.join(settings.PROJECT_ROOT,'Data/facts_db.json'))
 
 def index(request):
     return render(request, 'project/home.html')
 
 def article(request):
     print "Running tests"
-    title = request.GET.get('title')
-    if title == None:
-        title = ""
-
     description = request.GET.get('description')
     if description == None:
-        description = ""
+        return render_to_response('project/article.html', {'description': description})
 
-    dateStr = request.GET.get('date')
-    if  dateStr == None:
-        date = datetime.date(1970,1,1)
-    else:
-        date = datetime.date(1970,1,1)
+    queryArticle = a.article(body=description)
+    facts = extraction.extractFacts(queryArticle)
+    reports = []
+    for fact in facts:
+      reports.append(filter_f.filter_facts(fact, facts_db))
 
-    body = request.GET.get('body')
-    if body == None:
-        body = ""
+    print "Reports: {}".format(reports)
 
-    link = request.GET.get('link')
-    if link == None:
-       link = ""
-
-
-    print(title)
-    print(description)
-    print(date)
-    print(body)
-    print(link)
-
-    return render(request, 'project/article.html')
+    return render_to_response('project/article.html', {'description': description, 'reports':reports})
 
 def reddit(request):
     link = request.GET.get('link')
@@ -49,5 +44,5 @@ def reddit(request):
     
     print(link)
 
-    return render(request, 'project/reddit.html')
+    return render_to_response('project/article.html', {'description': description})
 

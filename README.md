@@ -2,9 +2,21 @@
 
 Doug Smith, Noah Yoshida, Cami Carballo
 
+*Special thanks also to UTA ClaimBuster fact-checking team*
+
 ### Dependencies
+- Code is primarily python2.7, please alias/run appropriately in your environment.
 - All data in REQUIREMENTS.txt `pip install -r REQUIREMENTS.txt`
 - spacy english module: `python -m spacy download en`
+
+### Usage
+- Configure your environment and install the requisite packages as explained in dependencies.
+- Start the django server in mysite/
+```
+cd mysite
+python manage.py runserver
+```
+- Server should start up and listen on a local port(8000).
 
 ### Common Data Type
 
