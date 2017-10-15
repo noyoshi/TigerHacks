@@ -18,7 +18,9 @@
     </form>
     <br>
     <br>
+    <br>
     <a id="submit" class="hoverable waves-effect waves-light btn-large center"><h5 class="center">&#9889</h5></a>
+    <br>
     <br>
     <br>
     <br>
@@ -26,6 +28,8 @@
   </div>
   <script src="static/project/javascript/form.js"></script>
   {% else %}
+  <div class="divider"></div>
+<br>
     {% for r in reports %}
       <div>Your Article:</div>
       <div>
@@ -44,6 +48,11 @@
       <br>
       <br>
     {% endfor %}
+    <br>
+    <div class="divider"></div>
+    <br>
+    <br>
+    <br>
   {% endif %}
 
 {% endblock %}
