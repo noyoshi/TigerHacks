@@ -47,7 +47,7 @@ _factHash:_ - Hashed representation of what the fact concerns (Subjects x Sentim
 _confidenceScore:_ - Numeric representation of how often this fact has been presented/verified
 
 ---
-Rss Feed Links:
+### RSS Feed Links
 
 BBC
 
