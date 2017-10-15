@@ -1,7 +1,10 @@
 .nav-wrapper{
-  background-color:#f6f6f6;
+  background-color:#ffffff;
   margin-top: 0;
   padding-top: 0;
+}
+head{
+  opacity: 0;
 }
 p{
   font-family: 'Roboto-light', sans-serif;
@@ -32,27 +35,29 @@ p{
 .derp{
   margin-top: 20px;
 }
+.parallax-container {
+      height: 600px;
+    }
 nav {
-  background-color:#000000;
-  opacity: 0.48;
+  background-color:#ffffff;
+  /*opacity: 0.45;*/
   height: 80px;
 }
 .icon{
   height: 10px;
 }
 .title{
-  color:#000000;
+  color: #424242 ;
   padding-top: 9px;
   font-family: 'Julius Sans One', sans-serif;
   font-size: 50px;
+  opacity: 1;
 }
 body {
-    height: 100%;
-    margin: 0;
     /*text-align: left;*/
     font-family: 'Roboto', sans-serif;
     width: 100%;
-    background-color:#eff5f7;
+
 }
 .cat{
   text-align: center;
