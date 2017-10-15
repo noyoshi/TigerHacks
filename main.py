@@ -17,7 +17,7 @@ facts_dict = {}
 
 #BBC
 top_facts = make_db.add_bbc(top)
-politics_b_facts = make_db.add_bbs(politics_b)
+politics_b_facts = make_db.add_bbc(politics_b)
 
 #NYT
 home_facts = make_db.add_nyt(home)
