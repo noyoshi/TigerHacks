@@ -2,7 +2,7 @@
 
 {% block content %}
   <div class="row">
-    <form class="col s12" action="/reddit">
+    <form id="redditForm" class="col s12" action="/reddit">
       <div class="row hoverable">
          <div class="input-field col s11 push-s1">
            <input id="link" type="text">
@@ -15,16 +15,9 @@
   </div>
 
     <form id= "articleForm" class="col s12" action="/article">
-<<<<<<< HEAD
       <div class="hoverable row">
         <div class="input-field col s11 push-s1">
-          <textarea id="textarea1" class="materialize-textarea"></textarea>
-=======
-      <div class="row ">
-        <img class="col s1" src="static/project/paper.png">
-        <div class="input-field col s11">
           <textarea id="textarea1" name="description" class="materialize-textarea"></textarea>
->>>>>>> 63c5294533965c147734021dd11863811e1389cf
           <label id="articleLabel" for="textarea1">Paste your article here:</label>
         </div>
         <img class="derp col s1 pull-s11" src="static/project/paper.png">
@@ -32,7 +25,7 @@
       </div>
     </form>
 
-<a class="hoverable waves-effect waves-light btn-large"><h5 class="center">Submit</h5></a>
+<a id="submit" class="hoverable waves-effect waves-light btn-large"><h5 class="center">Submit</h5></a>
 
 
 
@@ -41,46 +34,5 @@
   <li> Claims: {{n}} <img class="newspaper" src="static/project/icons/newspaper.png"></li>
   {% endfor %}
 </ul>
-  <script>
-    redditText = document.getElementById("link");
-    articleText = document.getElementById("textarea1");
-    redditLabel = document.getElementById("redditLabel");
-    articleLabel = document.getElementById("articleLabel");
-    articleForm = document.getElementById("articleForm");
-
-    articleText.addEventListener("focus", function(){
-      articleLabel.style.visibility="hidden";
-    });
-
-    articleText.addEventListener("blur", function(){
-      articleText.value = "";
-      articleLabel.style.visibility="visible";
-    });
-    
-    articleText.addEventListener("keypress", function(e){
-      console.log("KEY");
-      console.log($('#textarea1'))
-      $('#textarea1').trigger('resize');
-    });
-
-    redditText.addEventListener("keypress", function(e){
-      if (e.keyCode === 13) {
-        e.preventDefault();
-      }
-    });
-
-    redditText.addEventListener("focus", function(){
-      redditLabel.style.visibility="hidden";
-    });
-
-    redditText.addEventListener("blur", function(){
-      redditText.value = "";
-      redditLabel.style.visibility="visible";
-    });
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 63c5294533965c147734021dd11863811e1389cf
-  </script>
+  <script src="static/project/javascript/home.js"></script>
 {% endblock %}
