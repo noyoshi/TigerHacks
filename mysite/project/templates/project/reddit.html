@@ -4,6 +4,7 @@
 <br>
 <br>
 <br>
+  {% if reports == None %}
   <div class="form-container">
     <form id="form" class="col s12" action="/reddit">
       <div class="row">
@@ -23,5 +24,24 @@
     <br>
     <br>
   </div>
-
+  <script src="static/project/javascript/form.js"></script>
+  {% else %}
+    {% for report in reports %}
+      <div>
+        {{ report.first.body }}
+      </div>
+      <div>
+        {{ report.first.author }}
+      </div>
+      {% if report.third > 0 %}
+        {% for r in report.second %}
+          <div>DETAIL</div>
+        {% endfor %}
+      {% else %}
+        <div>
+          Not sufficiently fact-checkable
+        </div>
+      {% endif %}
+    {% endfor %}
+  {% endif %}
 {% endblock %}
