@@ -12,7 +12,9 @@ Text.addEventListener("focus", function(){
 });
 
 Text.addEventListener("blur", function(){
-  Label.style.visibility="visible";
+  if (Text.text === "") {
+    Label.style.visibility="visible";
+  }
 });
 
 btnSubmit.addEventListener("click", function(){
