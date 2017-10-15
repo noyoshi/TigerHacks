@@ -17,4 +17,4 @@ Text.addEventListener("blur", function(){
 
 btnSubmit.addEventListener("click", function(){
   Form.submit();
-});
+})

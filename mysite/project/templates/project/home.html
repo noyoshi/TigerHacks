@@ -15,9 +15,7 @@
   <div class="row">
     <div class="row">
       <br>
-      <br>
-      <br>
-      <br>
+
          <img id="redditIcon" class="snoo hoverable col s2 push-s7" src="static/project/icons/new_snoo1.png">
          <img id="articleIcon" class="paper hoverable col s2 push-s1" src="static/project/paper.png">
        </div>
@@ -29,6 +27,11 @@
   {% for n in claimsList %}
   <li> Claims: {{n}} <img class="newspaper" src="static/project/icons/newspaper.png"></li>
   {% endfor %}
-</ul>
+</ul><script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
   <script src="static/project/javascript/home.js"></script>
+  <script>$(document).ready(function(){
+       $('.parallax').parallax();
+     });
+</script>
 {% endblock %}
