@@ -2,6 +2,7 @@
 #Create txt file with the article objects
 
 from bbc_scraper import bbc_scraper
+from nyt_scraper import nyt_scraper
 from extraction import extractFacts
 import json
 
