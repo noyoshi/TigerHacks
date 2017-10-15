@@ -2,4 +2,3 @@
 *.pyc
 feedparser/
 
-facts_db.json
