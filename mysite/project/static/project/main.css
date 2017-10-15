@@ -19,7 +19,6 @@ nav {
 }
 .title{
   color:#000000;
-
   padding-top: 9px;
   font-family: 'Julius Sans One', sans-serif;
   font-size: 40px;
@@ -33,6 +32,9 @@ body {
     background-color:#eff5f7;
 
 }
+/*textarea.materialize-textarea{
+  height: auto;
+}*/
 /*.materialize-textarea{
   padding-left: 10px;
 }*/

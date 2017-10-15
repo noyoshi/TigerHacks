@@ -45,6 +45,12 @@
       articleLabel.style.visibility="visible";
     });
     
+    articleText.addEventListener("keypress", function(e){
+      console.log("KEY");
+      console.log($('#textarea1'))
+      $('#textarea1').trigger('resize');
+    });
+
     redditText.addEventListener("keypress", function(e){
       if (e.keyCode === 13) {
         e.preventDefault();
