@@ -36,6 +36,7 @@ def filter_facts(fact, fact_db):
     similarity = fact_comp_lib.hash_check(questioned, accepted)
 
     if similarity > max_similarity:
+      print fact_db[f]
       report = {"similarity": int(similarity*100), "questioned": questioned, "accepted": accepted, "confidence": int(confidence*100), "source": fact_db[f]['sources'][0]}
       max_similarity = similarity
 
