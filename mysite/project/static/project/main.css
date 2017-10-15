@@ -1,5 +1,5 @@
 .nav-wrapper{
-  background-color:#ffffff;
+  background-color:#fff6dd;
   margin-top: 0;
   padding-top: 0;
 }
@@ -8,9 +8,10 @@ head{
 }
 p{
   font-family: 'Roboto-light', sans-serif;
+  font-size: 18px;
 }
 .btn-large{
-    background-color: #f6f6f6;
+    background-color: #fff6dd;
     height: 50px;
     width: 150px;
     opacity: 0.50;
@@ -18,10 +19,10 @@ p{
     font-family:'Julius Sans One', sans-serif;
 }
 .snoo{
-  opacity: 1;
+  opacity: 0.9;
 }
 .paper{
-  opacity: 1;
+  opacity: 0.9;
 }
 .btn-large:visited{
   background-color: white
@@ -39,24 +40,25 @@ p{
       height: 600px;
     }
 nav {
-  background-color:#ffffff;
+  background-color:#fff8e5;
   /*opacity: 0.45;*/
-  height: 80px;
+  height: 120px;
 }
 .icon{
   height: 10px;
 }
 .title{
   color: #424242 ;
-  padding-top: 9px;
+  padding-top: 30px;
   font-family: 'Julius Sans One', sans-serif;
-  font-size: 50px;
+  font-size: 60px;
   opacity: 1;
 }
 body {
     /*text-align: left;*/
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Light', sans-serif;
     width: 100%;
+    background-color: #fff9ed;
 
 }
 .cat{
@@ -66,7 +68,11 @@ body {
 .form-container{
   text-align: center;
 }
-h3{
+h1{
+  font-family: 'Julius Sans One', sans-serif;
+  font-size: 70px;
+}
+.welcome{
   font-family: 'Julius Sans One', sans-serif;
 }
 .input-field label {
