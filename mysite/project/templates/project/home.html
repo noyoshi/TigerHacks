@@ -3,26 +3,38 @@
 {% block content %}
   <div class="row">
     <form class="col s12" action="/reddit">
-      <div class="row">
-        <img class="col s1" src="static/project/icons/snoo.png">
-         <div class="input-field col s11">
+      <div class="row hoverable">
+         <div class="input-field col s11 push-s1">
            <input id="link" type="text">
            <label id="redditLabel" for="link">Paste your Reddit link here:</label>
          </div>
+         <img class="col s1 pull-s11" src="static/project/icons/snoo.png">
+         <!-- <a class="hoverable col s1 waves-effect waves-light btn-large">Submit</a> -->
        </div>
     </form>
   </div>
-  <div class="row">
+
     <form id= "articleForm" class="col s12" action="/article">
+<<<<<<< HEAD
+      <div class="hoverable row">
+        <div class="input-field col s11 push-s1">
+          <textarea id="textarea1" class="materialize-textarea"></textarea>
+=======
       <div class="row ">
         <img class="col s1" src="static/project/paper.png">
         <div class="input-field col s11">
           <textarea id="textarea1" name="description" class="materialize-textarea"></textarea>
+>>>>>>> 63c5294533965c147734021dd11863811e1389cf
           <label id="articleLabel" for="textarea1">Paste your article here:</label>
         </div>
+        <img class="derp col s1 pull-s11" src="static/project/paper.png">
+        <!-- <a class="hoverable col s1 waves-effect waves-light btn-large"></a> -->
       </div>
     </form>
-  </div>
+
+<a class="hoverable waves-effect waves-light btn-large"><h5 class="center">Submit</h5></a>
+
+
 
 <ul>
   {% for n in claimsList %}
@@ -65,5 +77,10 @@
       redditText.value = "";
       redditLabel.style.visibility="visible";
     });
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> 63c5294533965c147734021dd11863811e1389cf
   </script>
 {% endblock %}
