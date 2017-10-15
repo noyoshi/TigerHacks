@@ -10,9 +10,9 @@ from fact import Fact
 from source import Source
 
 FACT_CHECK_URL="http://idir-server2.uta.edu/claimbuster/API/score/text/"
-CHECK_THRESHOLD=0.00
+CHECK_THRESHOLD=0.95
 
-parser = English() #instantiate one parser to reduce init times
+parser = English()
 
 def buildClause(baseToken):
   output = baseToken.orth_
@@ -37,8 +37,9 @@ def distillFact(factString):
       newFactString = newFactString + c.decode('utf-8')
     except:
       continue
+
   for token in parser(newFactString):
-    #print token.orth_, token.dep_, token.head.orth_, [t.orth_ for t in token.lefts], [t.orth_ for t in token.rights]
+
     if token.dep_ == "ROOT":
       sentenceRoot = token
 

@@ -14,9 +14,11 @@ def load_db(file_name):
 def filter_facts(fact, fact_db):
   report = {}
 
-  if fact.factHash in fact_db:
-    report = {"status": "fact found"}
-  else:
-    report = {"status": "new fact"}
+  A = fact.factStrings[0]
+  for f in fact_db:
+    B = fact_db[f]['fact_strings'][0]
+    similarity = fact_comp_lib.hash_check(A, B)
+    if similarity > 0.3:
+      report = {"similarity": similarity, "A": A, "B": B}
 
   return report

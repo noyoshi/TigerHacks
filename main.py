@@ -1,25 +1,29 @@
 #!/usr/bin/python
 
-import make_db, filter_f, extraction, nyt_scraper
+import make_db, filter_f, extraction, nyt_scraper, bbc_scraper, json
 
-url = "http://feeds.bbci.co.uk/news/rss.xml"
+db_url = "http://feeds.bbci.co.uk/news/rss.xml"
+ck_url = "http://feeds.bbci.co.uk/news/politics/rss.xml"
 
-#make_db()
-print "Making database... URL: {}".format(url)
-facts_db = make_db.make_db(url)
-#load_db()
+#MAKE DATABASE (should only happen once)
+print "Making database... URL: {}".format(ck_url)
+facts_db = make_db.make_db(ck_url)
+
+#LOAD DATABASE
 print "Loading Database..."
 facts_db = filter_f.load_db('facts_db.json')
-#get articles
-print "Scraping..."
-articles = nyt_scraper.nyt_scraper("http://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml")
-#extract facts
+
+#SCRAPE URL
+print "Scraping... URL: {}".format(ck_url)
+#articles = nyt_scraper.nyt_scraper("http://rss.nytimes.com/services/xml/rss/nyt/Politics.xml")
+articles = bbc_scraper.bbc_scraper(ck_url)
+
+#EXTRACT FACTS
 for article in articles:
-  print "extracting facts..."
   facts = extraction.extractFacts(article)
-  #filter facts
+  #PASS THROUGH FILTER
   for fact in facts:
-    print "filtering facts..."
     report = filter_f.filter_facts(fact, facts_db)
-    #deliver report
-    print "Report: {}".format(report)
+    #DELIVER REPORT
+    if report != {}:
+      print "Report: {}".format(report)
