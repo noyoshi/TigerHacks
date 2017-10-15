@@ -26,17 +26,16 @@ def article(request):
     description = request.GET.get('description')
     if description == None:
         return render_to_response('project/article.html', {'description': description})
-    print description
 
     queryArticle = a.article(body=description)
     facts = extraction.extractFacts(queryArticle)
-    report = {}
+    reports = []
     for fact in facts:
-      report = filter_f.filter_facts(fact, facts_db)
+      reports.append(filter_f.filter_facts(fact, facts_db))
 
-    print "Report: {}".format(report)
+    print "Reports: {}".format(reports)
 
-    return render_to_response('project/article.html', {'description': description})
+    return render_to_response('project/article.html', {'description': description, 'reports':reports})
 
 def reddit(request):
     link = request.GET.get('link')

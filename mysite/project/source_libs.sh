@@ -7,7 +7,6 @@ cp ../../fact_comp_lib.py ./
 cp ../../extraction.py ./
 cp ../../nyt_scraper.py ./
 cp ../../bbc_scraper.py ./
-cp ../../facts_db.json Data/
 
 
 
