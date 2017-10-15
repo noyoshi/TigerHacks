@@ -1,33 +1,19 @@
 {% extends "project/header.html" %}
 
 {% block content %}
+<div>
   <div class="row">
-    <form id="redditForm" class="col s12" action="/reddit">
-      <div class="row hoverable">
-         <div class="input-field col s11 push-s1">
-           <input id="link" type="text">
-           <label id="redditLabel" for="link">Paste your Reddit link here:</label>
-         </div>
-         <img class="col s1 pull-s11" src="static/project/icons/snoo.png">
-         <!-- <a class="hoverable col s1 waves-effect waves-light btn-large">Submit</a> -->
+    <div class="row">
+      <br>
+      <br>
+      <br>
+      <br>
+         <img class="snoo hoverable col s2 push-s7" src="static/project/icons/snoo.png">
+         <img class="paper hoverable col s2 push-s1" src="static/project/paper.png">
        </div>
-    </form>
+   </div>
+         <!-- <a class="hoverable col s1 waves-effect waves-light btn-large">Submit</a> -->
   </div>
-
-    <form id= "articleForm" class="col s12" action="/article">
-      <div class="hoverable row">
-        <div class="input-field col s11 push-s1">
-          <textarea id="textarea1" name="description" class="materialize-textarea"></textarea>
-          <label id="articleLabel" for="textarea1">Paste your article here:</label>
-        </div>
-        <img class="derp col s1 pull-s11" src="static/project/paper.png">
-        <!-- <a class="hoverable col s1 waves-effect waves-light btn-large"></a> -->
-      </div>
-    </form>
-
-<a id="submit" class="hoverable waves-effect waves-light btn-large"><h5 class="center">Submit</h5></a>
-
-
 
 <ul>
   {% for n in claimsList %}

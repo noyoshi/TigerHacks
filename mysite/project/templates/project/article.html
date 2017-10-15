@@ -5,4 +5,29 @@
     <div class="nav-wrapper">
       <a href="#" class="brand-logo center">Hi Guys! I'm an Article</a>
     </div>
+    <form id="redditForm" class="col s12" action="/reddit">
+      <div class="row hoverable">
+         <div class="input-field col s11 push-s1">
+           <input id="link" type="text">
+           <label id="redditLabel" for="link">Paste your Reddit link here:</label>
+         </div>
+         <img class="col s1 pull-s11" src="static/project/icons/snoo.png">
+         <!-- <a class="hoverable col s1 waves-effect waves-light btn-large">Submit</a> -->
+       </div>
+    </form>
+  </div>
+
+    <form id= "articleForm" class="col s12" action="/article">
+      <div class="hoverable row">
+        <div class="input-field col s11 push-s1">
+          <textarea id="textarea1" name="description" class="materialize-textarea"></textarea>
+          <label id="articleLabel" for="textarea1">Paste your article here:</label>
+        </div>
+        <img class="derp col s1 pull-s11" src="static/project/paper.png">
+        <!-- <a class="hoverable col s1 waves-effect waves-light btn-large"></a> -->
+      </div>
+    </form>
+
+<a id="submit" class="hoverable waves-effect waves-light btn-large"><h5 class="center">Submit</h5></a>
+
 {% endblock %}
