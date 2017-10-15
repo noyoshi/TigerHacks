@@ -8,5 +8,7 @@ cp ../../extraction.py ./
 cp ../../nyt_scraper.py ./
 cp ../../bbc_scraper.py ./
 
+cp ../../comment.py ./
+cp ../../reddit_scraper.py ./
 
 
