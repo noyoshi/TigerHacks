@@ -15,9 +15,16 @@
   </div>
 
     <form id= "articleForm" class="col s12" action="/article">
+<<<<<<< HEAD
       <div class="hoverable row">
         <div class="input-field col s11 push-s1">
           <textarea id="textarea1" class="materialize-textarea"></textarea>
+=======
+      <div class="row ">
+        <img class="col s1" src="static/project/paper.png">
+        <div class="input-field col s11">
+          <textarea id="textarea1" name="description" class="materialize-textarea"></textarea>
+>>>>>>> 63c5294533965c147734021dd11863811e1389cf
           <label id="articleLabel" for="textarea1">Paste your article here:</label>
         </div>
         <img class="derp col s1 pull-s11" src="static/project/paper.png">
@@ -34,7 +41,6 @@
   <li> Claims: {{n}} <img class="newspaper" src="static/project/icons/newspaper.png"></li>
   {% endfor %}
 </ul>
-
   <script>
     redditText = document.getElementById("link");
     articleText = document.getElementById("textarea1");
@@ -50,10 +56,10 @@
       articleText.value = "";
       articleLabel.style.visibility="visible";
     });
-
-    articleText.addEventListener("keypress", function(event){
-      if(event.keyCode == 13){
-        articleForm.submit()
+    
+    redditText.addEventListener("keypress", function(e){
+      if (e.keyCode === 13) {
+        e.preventDefault();
       }
     });
 
@@ -65,7 +71,10 @@
       redditText.value = "";
       redditLabel.style.visibility="visible";
     });
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 63c5294533965c147734021dd11863811e1389cf
   </script>
 {% endblock %}
