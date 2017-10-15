@@ -17,23 +17,28 @@ def make_json(fact):
 
   return fact_json
 
-def make_db(bbc_url, nyt_url):
+def add_bbc(url):
 
-  articles_bbc = bbc_scraper(bbc_url)
-  articles_nyt = nyt_scraper(nyt_url)
+  articles = bbc_scraper(url)
   facts_dict = {}
   
-  for article in articles_bbc:
+  for article in articles:
     facts = extractFacts(article)
     for fact in facts:
       fact_json = make_json(fact)
       facts_dict[fact.factHash] = fact_json
 
-  for article in articles_nyt:
+  return facts_dict
+
+def add_nyt(url):
+
+  articles = nyt_scraper(url)
+  facts_dict = {}
+  
+  for article in articles:
     facts = extractFacts(article)
     for fact in facts:
       fact_json = make_json(fact)
       facts_dict[fact.factHash] = fact_json
 
-  with open('facts_db.json', 'w') as f:
-    f.write(json.dumps(facts_dict))
+  return facts_dict
