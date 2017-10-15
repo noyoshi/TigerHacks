@@ -35,8 +35,6 @@ def article(request):
     for fact in facts:
       reports.append(filter_f.filter_facts(fact, facts_db))
 
-    print "Reports: {}".format(reports)
-
     return render_to_response('project/article.html', {'description': description, 'reports':reports})
 
 def reddit(request):
@@ -44,22 +42,16 @@ def reddit(request):
     if link == None:
       return render_to_response('project/reddit.html', {'reports':None})
     
-    print link
-
     posts = reddit_scraper.reddit_scraper(link) 
-
-    print posts
 
     reports = []
     for p in posts:
       report = []
       facts = extraction.extractFacts(p)
       for f in facts:
-        report.append(filter_f.filter_facts(fact, facts_db))
+        report.append(filter_f.filter_facts(f, facts_db))
       
       reports.append({"first":p,"second":report,"length":len(report)})
-
-    print reports
 
     return render_to_response('project/reddit.html', {'reports':reports,'length': len(reports)})
 
