@@ -1,24 +1,31 @@
 {% extends "project/header.html" %}
 
 {% block content %}
+
+<br>
+<br>
+<br>
   {% if description == None %}
   <div class="form-container">
     <form id= "form" class="col s12" action="/article">
-      <div class="hoverable row">
+      <div class="row">
         <div class="input-field col s11 push-s1">
           <textarea id="textarea1" name="description" class="materialize-textarea"></textarea>
           <label id="formLabel" for="textarea1">Paste your article here:</label>
         </div>
         <img class="derp col s1 pull-s11" src="static/project/paper.png">
-        <!-- <a class="hoverable col s1 waves-effect waves-light btn-large"></a> -->
       </div>
     </form>
-
-    <a id="submit" class="hoverable waves-effect waves-light btn-large center"><h5 class="center">Submit</h5></a>
+    <br>
+    <br>
+    <a id="submit" class="hoverable waves-effect waves-light btn-large center"><h5 class="center">&#9889</h5></a>
+    <br>
+    <br>
+    <br>
+    <br>
   </div>
   <script src="static/project/javascript/form.js"></script>
   {% else %}
-
     {% for r in reports %}
       <div>Your Article:</div>
       <div>

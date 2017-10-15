@@ -96,6 +96,7 @@ def checkability(factString):
 def extractFacts(article):
   facts = list()
   sentences = article.body.split('.')
+  source = {'title': article.title, 'link': article.link}
   for s in sentences:
     c = checkability(s)
     if c > CHECK_THRESHOLD:
@@ -103,5 +104,6 @@ def extractFacts(article):
                         distilledFact=str(distillFact(s)),
                         factStrings=[s],
                         factHash = hashFact(s),
-                        confidence = c))
+                        confidence = c,
+                        sources=[source]))
   return facts
