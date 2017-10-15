@@ -6,8 +6,8 @@ db_url = "http://feeds.bbci.co.uk/news/politics/rss.xml"
 ck_url = "http://rss.nytimes.com/services/xml/rss/nyt/Politics.xml"
 
 #MAKE DATABASE (should only happen once)
-#print "Making database... URL: {}".format(db_url)
-#facts_db = make_db.make_db(db_url)
+print "Making database... URL: {}".format(db_url)
+facts_db = make_db.make_db(db_url)
 
 #LOAD DATABASE
 print "Loading Database..."
@@ -29,4 +29,5 @@ for article in articles:
       print "Fact Being Questioned: {}".format(report['questioned'])
       print "Accepted Fact: {}".format(report['accepted'])
       print "Similarity: {}% | Confidence Score: {}%".format(report['similarity'], report['confidence'])
+      print "Source: {} | {}".format(report['source']['title'], report['source']['link'])
       print

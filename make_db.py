@@ -12,6 +12,8 @@ def make_json(fact):
   fact_json['fact_strings'] = fact.factStrings
   fact_json['confidence'] = fact.confidence
   fact_json['factHash'] = fact.factHash
+  fact_json['sources'] = fact.sources
+
   return fact_json
 
 def make_db(url):
