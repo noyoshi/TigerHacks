@@ -19,6 +19,25 @@
   <script src="static/project/javascript/form.js"></script>
   {% else %}
     <div>{{ description }}</div>
+
+    {% for r in reports %}
+      <div>Your Article:</div>
+      <div>
+        {{r.questioned}}
+      </div>
+      <div>Database:</div>
+      <div>
+        {{r.accepted}}
+      </div>
+      <div>
+        Confidence: {{r.similarity}}
+      </div>
+      <div>
+        Similarity: {{r.similarity}}
+      </div>
+      <br>
+      <br>
+    {% endfor %}
   {% endif %}
 
 {% endblock %}
