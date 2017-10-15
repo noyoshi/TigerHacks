@@ -3,6 +3,7 @@ import requests
 import json
 import string
 import spacy
+import datetime
 from spacy.en import English
 
 from article import article
@@ -91,16 +92,35 @@ def checkability(factString):
       return -1
 
 
+# Need to use try/except to deal with inconsistent types.
+def tryTitle(article):
+  try:
+    return article.title
+  except:
+    return ""
+
+def tryLink(article):
+  try:
+    return article.Link
+  except:
+    return ""
+
+def tryDate(article):
+  try:
+    return article.date
+  except:
+    return datetime.date(1970,1,1)
+
 # Function for generating facts from article.
 # @OUTPUT - list of facts
 def extractFacts(article):
   facts = list()
   sentences = article.body.split('.')
-  source = {'title': article.title, 'link': article.link}
+  source = {'title': tryTitle(article), 'link': tryLink(article)}
   for s in sentences:
     c = checkability(s)
     if c > CHECK_THRESHOLD:
-      facts.append(Fact(published_date=article.date,
+      facts.append(Fact(published_date=tryDate(article),
                         distilledFact=str(distillFact(s)),
                         factStrings=[s],
                         factHash = hashFact(s),
