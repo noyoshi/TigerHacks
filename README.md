@@ -5,6 +5,8 @@ Doug Smith, Noah Yoshida, Cami Carballo
 *Special thanks also to UTA ClaimBuster fact-checking team*
 
 ![alt text](https://github.com/noyoshi/TigerHacks/blob/master/mysite/project/static/project/UI-screenshot.png)
+![alt text](https://github.com/noyoshi/TigerHacks/blob/master/mysite/project/static/project/screenshot-2.png)
+
 
 ### Dependencies
 - Code is primarily python2.7, please alias/run appropriately in your environment.
