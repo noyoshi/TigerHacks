@@ -4,6 +4,8 @@ Doug Smith, Noah Yoshida, Cami Carballo
 
 *Special thanks also to UTA ClaimBuster fact-checking team*
 
+https://github.com/noyoshi/TigerHacks/blob/master/mysite/project/static/project/UI-screenshot.png
+
 ### Dependencies
 - Code is primarily python2.7, please alias/run appropriately in your environment.
 - All data in REQUIREMENTS.txt `pip install -r REQUIREMENTS.txt`
