@@ -11,7 +11,7 @@ from fact import Fact
 from source import Source
 
 FACT_CHECK_URL="http://idir-server2.uta.edu/claimbuster/API/score/text/"
-CHECK_THRESHOLD=0.95
+CHECK_THRESHOLD=0.75
 
 parser = English()
 
