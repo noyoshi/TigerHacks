@@ -9,7 +9,7 @@ cytoolz==0.8.2
 dill==0.2.7.1
 dj-database-url==0.4.2
 dj-static==0.0.6
-Django==1.11.6
+Django==1.11.23
 django-toolbelt==0.0.1
 en-core-web-sm==1.2.0
 feedparser==5.2.1
