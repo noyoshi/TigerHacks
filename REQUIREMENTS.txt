@@ -18,7 +18,7 @@ funcsigs==1.0.2
 gunicorn==19.7.1
 html5lib==0.999999999
 idna==2.6
-lxml==4.1.0
+lxml==4.6.5
 Markdown==2.6.9
 mock==2.0.0
 murmurhash==0.26.4
